@@ -113,6 +113,6 @@ export const useStore = create<Store>()(
           })),
         })),
     }),
-    { name: "kanban-storage", storage: createJSONStorage(() => localStorage) }
+    { name: "kanban-storage", storage: createJSONStorage(() => localStorage) } // Fixed getStorage to storage
   )
 );
