@@ -1,6 +1,14 @@
 import { useDraggable } from '@dnd-kit/core';
 import { useState } from 'react';
 import { useStore } from '../stores/useStore';
+import { Task } from '../stores/useStore'; // Import Task type
+
+// Define TaskCardProps interface
+interface TaskCardProps {
+  id: string;
+  title: string;
+  column: Task["column"];
+}
 
 export const TaskCard = ({ id, title, column }: TaskCardProps) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -39,7 +47,6 @@ export const TaskCard = ({ id, title, column }: TaskCardProps) => {
   };
 
   return (
-    
     <div
       ref={setNodeRef}
       style={style}

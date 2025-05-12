@@ -1,6 +1,14 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { TaskCard } from './TaskCard';
+import { Task } from '../stores/useStore'; // Import Task type
+
+// Define SortableTaskCardProps interface
+interface SortableTaskCardProps {
+  id: string;
+  title: string;
+  column: Task["column"];
+}
 
 export const SortableTaskCard = ({ id, title, column }: SortableTaskCardProps) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
